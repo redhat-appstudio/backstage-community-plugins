@@ -8,16 +8,6 @@
 # that are required.
 FROM registry.redhat.io/ubi9/nodejs-20:latest AS builder
 
-WORKDIR /plugin-workspace
-
-USER root
-
-# TODO: It looks like some of the top-level files, maybe package.json and yarn.lock, are required
-# for making the build work. Consider making this COPY statement a little more selective.
-COPY . .
-
-RUN find -name node_modules -type d -exec rm -rf {} +
-
 ENV DIR_PLUGIN_REDHAT_ARGOCD="workspaces/redhat-argocd"
 ENV DIR_PLUGIN_QUAY="workspaces/quay"
 ENV DIR_PLUGIN_TEKTON="workspaces/tekton"
@@ -29,6 +19,16 @@ ENV PLUGINS_MSSV="multi-source-security-viewer"
 ENV PLUGINS_KEYS="REDHAT_ARGOCD QUAY TEKTON MSSV"
 ENV PLUGINS_OUTPUT="/plugin-output"
 ENV PLUGINS_WORKSPACE="/plugin-workspace"
+
+WORKDIR /plugin-workspace
+
+USER root
+
+# TODO: It looks like some of the top-level files, maybe package.json and yarn.lock, are required
+# for making the build work. Consider making this COPY statement a little more selective.
+COPY . .
+
+RUN find -name node_modules -type d -exec rm -rf {} +
 
 # The recommended way of using yarn is via corepack. However, corepack is not included in the UBI
 # image. Below we install corepack so we can install yarn.
@@ -43,7 +43,7 @@ RUN \
     corepack use 'yarn@4' && \
     yarn --version && \
     mkdir -p $PLUGINS_OUTPUT && \
-    dnf -y install python3 make gcc gcc-c++ zlib-devel brotli-devel openssl-devel
+    dnf -y install zlib-devel brotli-devel jq
 
 RUN set -ex && \
   for key in $PLUGINS_KEYS; do \
@@ -68,8 +68,19 @@ RUN set -ex && \
     npx --yes @janus-idp/cli@latest package package-dynamic-plugins --export-to "$PLUGINS_OUTPUT"; \
     mv "$PLUGINS_OUTPUT/index.json" "$PLUGINS_OUTPUT/$key-index.json"; \
   done && \
-  cd $PLUGINS_OUTPUT && \
-  npx --yes node-jq -c -s 'flatten' QUAY-index.json TEKTON-index.json MSSV-index.json REDHAT_ARGOCD-index.json > index.json
+  jq -c -s 'flatten' $PLUGINS_OUTPUT/*-index.json > $PLUGINS_OUTPUT/index.json && \
+  rm -f $PLUGINS_OUTPUT/*-index.json
 
 FROM scratch
+
+LABEL name="Backstage community plugins" \
+      com.redhat.component="rhtap" \
+      vendor="Red Hat, Inc." \
+      version="1" \
+      release="5" \
+      description="Collection of Backstage community plugins" \
+      io.k8s.description="Collection of Backstage community plugins" \
+      url="https://github.com/redhat-appstudio/backstage-community-plugins" \
+      distribution-scope="public"
+
 COPY --from=builder /plugin-output /
