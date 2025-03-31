@@ -1290,8 +1290,8 @@ __metadata:
   linkType: hard
 
 "@azure/identity@npm:^4.0.0":
-  version: 4.7.0
-  resolution: "@azure/identity@npm:4.7.0"
+  version: 4.8.0
+  resolution: "@azure/identity@npm:4.8.0"
   dependencies:
     "@azure/abort-controller": "npm:^2.0.0"
     "@azure/core-auth": "npm:^1.9.0"
@@ -1301,13 +1301,13 @@ __metadata:
     "@azure/core-util": "npm:^1.11.0"
     "@azure/logger": "npm:^1.0.0"
     "@azure/msal-browser": "npm:^4.2.0"
-    "@azure/msal-node": "npm:^3.2.1"
+    "@azure/msal-node": "npm:^3.2.3"
     events: "npm:^3.0.0"
     jws: "npm:^4.0.0"
     open: "npm:^10.1.0"
     stoppable: "npm:^1.1.0"
     tslib: "npm:^2.2.0"
-  checksum: 10/1d162e66076e213a97d3ffd0e719188027dcb88e6a654d78213e89ed07b4b2ad258c7bcd04e8bfbf644c0eef22c65df89a886f2c4a32905b6c104af6a8283c83
+  checksum: 10/55f5e8f8fb5478d32942f66f656bf14768a2348a998624c6491f9fc1b72c6fad569c13bb03186daa11ae67bbf009bd51d4712ad14948d9f607c4d66c7f6660a0
   languageName: node
   linkType: hard
 
@@ -1336,14 +1336,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/msal-node@npm:^3.2.1":
-  version: 3.2.3
-  resolution: "@azure/msal-node@npm:3.2.3"
+"@azure/msal-common@npm:15.3.0":
+  version: 15.3.0
+  resolution: "@azure/msal-common@npm:15.3.0"
+  checksum: 10/6f809038b827d421cb160e936880cec5b8ad70ed8628e7774ac18e365bfbf9c97223786638a07dc04d194d7c10bae001b5dac5487dacb791d69e3766fa6b9c04
+  languageName: node
+  linkType: hard
+
+"@azure/msal-node@npm:^3.2.3":
+  version: 3.4.0
+  resolution: "@azure/msal-node@npm:3.4.0"
   dependencies:
-    "@azure/msal-common": "npm:15.2.0"
+    "@azure/msal-common": "npm:15.3.0"
     jsonwebtoken: "npm:^9.0.0"
     uuid: "npm:^8.3.0"
-  checksum: 10/ea1357a1a9498b65d86b02e0bf896672cb0617d36ecb4a51cfe16496ff5e862a314e353ef67d0c0fa777247f118276da45deb522afc9c18e9f6b2637d367113f
+  checksum: 10/a440a276249d4ec21ce904d64814f375a30d5fd1a1b8a8493ad4bf60e9be8bcd7b28c24130d13a76d00967e346639dde8731b44af59b507016cccbace0323ceb
   languageName: node
   linkType: hard
 
@@ -2712,12 +2719,12 @@ __metadata:
   linkType: hard
 
 "@babel/runtime-corejs3@npm:^7.20.7, @babel/runtime-corejs3@npm:^7.22.15, @babel/runtime-corejs3@npm:^7.26.9":
-  version: 7.26.9
-  resolution: "@babel/runtime-corejs3@npm:7.26.9"
+  version: 7.27.0
+  resolution: "@babel/runtime-corejs3@npm:7.27.0"
   dependencies:
     core-js-pure: "npm:^3.30.2"
     regenerator-runtime: "npm:^0.14.0"
-  checksum: 10/8e70aa88d68f3bf689d022b1fa93ea271a8accddea7136ddd1da3aae79edac597ff9444cabbbe8f89b2552729889282c9a6a0176e92e69d47fe96c4db8bbfedd
+  checksum: 10/034628bf1b602729b53022f99fd82baca9347db435843c677b888cd7e71412aa4a3065806d622b8e98971577285b4bd546dfc8b57c14aea43a22934a1a3beca4
   languageName: node
   linkType: hard
 
@@ -27119,8 +27126,8 @@ __metadata:
   linkType: hard
 
 "mysql2@npm:^3.0.0":
-  version: 3.12.0
-  resolution: "mysql2@npm:3.12.0"
+  version: 3.14.0
+  resolution: "mysql2@npm:3.14.0"
   dependencies:
     aws-ssl-profiles: "npm:^1.1.1"
     denque: "npm:^2.1.0"
@@ -27131,7 +27138,7 @@ __metadata:
     named-placeholders: "npm:^1.1.3"
     seq-queue: "npm:^0.0.5"
     sqlstring: "npm:^2.3.2"
-  checksum: 10/55faaa32abc4ae706d8e3b9205ef3f05767bb35ee8049c95bfa594a2d54fec439118b66bbde23205491593f697501a060cba834288cc75fd70fdf4247ab15435
+  checksum: 10/ce3b965cee87bbe08ea32eb992a5fbe008bbae2b5e77d4c51fd06c2dd9c5c82d77d1687e60e435d3c0c15ea071ae67d723595152d2cfda554c2eb3f61582fdcc
   languageName: node
   linkType: hard
 
@@ -35759,13 +35766,13 @@ __metadata:
   linkType: hard
 
 "xml-crypto@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "xml-crypto@npm:6.0.0"
+  version: 6.0.1
+  resolution: "xml-crypto@npm:6.0.1"
   dependencies:
     "@xmldom/is-dom-node": "npm:^1.0.1"
     "@xmldom/xmldom": "npm:^0.8.10"
     xpath: "npm:^0.0.33"
-  checksum: 10/bc8f634618e8c30844546cf7a19d3c80634f8134118a2d2b9b76f0bb094b745c53ad94214cd3577fba93327d5d992c7570903e4463ce078d9699e45008246400
+  checksum: 10/703d40b54333a50f74f2d4f3e37a7b9de7aa2dfde48b0418205261d2f66c9e3869babd96d7be18ec1661aaa3aea03a018279846f844cea607a57183a21a4748a
   languageName: node
   linkType: hard
 
