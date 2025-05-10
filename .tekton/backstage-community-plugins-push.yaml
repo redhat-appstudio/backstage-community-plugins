@@ -26,21 +26,6 @@ spec:
     value: quay.io/redhat-user-workloads/rhtap-shared-team-tenant/backstage-community-plugins:{{revision}}
   - name: dockerfile
     value: ./Containerfile
-  taskRunSpecs:
-    - pipelineTaskName: build-container
-      stepSpecs:
-        - name: sbom-syft-generate
-          computeResources:
-            requests:
-              memory: 10Gi
-            limits:
-              memory: 10Gi
-        - name: prepare-sboms
-          computeResources:
-            requests:
-              memory: 10Gi
-            limits:
-              memory: 10Gi
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
@@ -240,7 +225,7 @@ spec:
         - name: kind
           value: task
         resolver: bundles
-      timeout: 2h
+      timeout: 2h0m0s
       when:
       - input: $(tasks.init.results.build)
         operator: in
@@ -594,9 +579,25 @@ spec:
       optional: true
     - name: netrc
       optional: true
-  taskRunTemplate: {}
+  taskRunSpecs:
+  - pipelineTaskName: build-container
+    stepSpecs:
+    - computeResources:
+        limits:
+          memory: 10Gi
+        requests:
+          memory: 10Gi
+      name: sbom-syft-generate
+    - computeResources:
+        limits:
+          memory: 10Gi
+        requests:
+          memory: 10Gi
+      name: prepare-sboms
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-backstage-community-plugins
   timeouts:
-    pipeline: 3h
+    pipeline: 3h0m0s
   workspaces:
   - name: git-auth
     secret:
