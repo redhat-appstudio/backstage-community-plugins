@@ -26,7 +26,7 @@
     "@backstage/backend-dynamic-feature-service": "^0.6.0",
     "@backstage/cli-node": "^0.2.13",
     "@backstage/plugin-app-backend": "^0.4.5",
-    "@backstage/plugin-auth-backend": "^0.24.3",
+    "@backstage/plugin-auth-backend": "^0.27.1",
     "@backstage/plugin-auth-backend-module-github-provider": "^0.3.0",
     "@backstage/plugin-auth-backend-module-guest-provider": "^0.2.5",
     "@backstage/plugin-catalog-backend": "^1.31.0",
