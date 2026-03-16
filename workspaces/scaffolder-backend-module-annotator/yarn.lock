@@ -12593,9 +12593,9 @@ __metadata:
   linkType: hard
 
 "flatted@npm:^3.2.7, flatted@npm:^3.2.9":
-  version: 3.3.2
-  resolution: "flatted@npm:3.3.2"
-  checksum: 10/ac3c159742e01d0e860a861164bcfd35bb567ccbebb8a0dd041e61cf3c64a435b917dd1e7ed1c380c2ebca85735fb16644485ec33665bc6aafc3b316aa1eed44
+  version: 3.4.1
+  resolution: "flatted@npm:3.4.1"
+  checksum: 10/39a308e2ef82d2d8c80ebc74b67d4ff3f668be168137b649440b6735eb9c115d1e0c13ab0d9958b3d2ea9c85087ab7e14c14aa6f625a22b2916d89bbd91bc4a0
   languageName: node
   linkType: hard
 
@@ -21669,11 +21669,11 @@ __metadata:
   linkType: hard
 
 "undici@npm:^5.28.4":
-  version: 5.28.4
-  resolution: "undici@npm:5.28.4"
+  version: 5.29.0
+  resolution: "undici@npm:5.29.0"
   dependencies:
     "@fastify/busboy": "npm:^2.0.0"
-  checksum: 10/a666a9f5ac4270c659fafc33d78b6b5039a0adbae3e28f934774c85dcc66ea91da907896f12b414bd6f578508b44d5dc206fa636afa0e49a4e1c9e99831ff065
+  checksum: 10/0ceca8924a32acdcc0cfb8dd2d368c217840970aa3f5e314fc169608474be6341c5b8e50cad7bd257dbe3b4e432bc5d0a0d000f83644b54fa11a48735ec52b93
   languageName: node
   linkType: hard
 
@@ -22596,12 +22596,12 @@ __metadata:
   linkType: hard
 
 "yauzl@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "yauzl@npm:3.2.0"
+  version: 3.2.1
+  resolution: "yauzl@npm:3.2.1"
   dependencies:
     buffer-crc32: "npm:~0.2.3"
     pend: "npm:~1.2.0"
-  checksum: 10/a3cd2bfcf7590673bb35750f2a4e5107e3cc939d32d98a072c0673fe42329e390f471b4a53dbbd72512229099b18aa3b79e6ddb87a73b3a17446080c903a2c4b
+  checksum: 10/15dfae75fbfe59c6a1b7a2cb27a995cda0ee70549d32d6b19937e84897436170f169f6bbefc34b9e9beb9c9114a1b8a8a40e7687a907909a19681ebcbf35a1f3
   languageName: node
   linkType: hard
 
