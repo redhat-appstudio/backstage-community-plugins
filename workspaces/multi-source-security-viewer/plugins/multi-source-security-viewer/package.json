@@ -63,7 +63,7 @@
     "@patternfly/react-core": "^6.0.0",
     "@patternfly/react-tokens": "^6.0.0",
     "@tanstack/react-query": "^5.62.7",
-    "lodash": "^4.17.21"
+    "lodash": "^4.18.1"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
